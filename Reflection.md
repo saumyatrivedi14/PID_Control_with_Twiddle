@@ -34,9 +34,10 @@ Kp = 0.1, Ki = 0.001, Kd = 1.0
 
 These hyper-parameters were chosen as initial values for auto-tuning using twiddle algorithm. Each hyperparameter was selected individually with different increment(dp) and tolerance limits (tol) to twing. I started with Kp and kept other parameters constant, the simulator ran for 300 steps and Average Tuning Error was recorded to change the hypermparameter values in the direction of least error.
 
-Similarly, Kd and Ki was tuned keeping other parameters constant. The final hyperparameters values selected were:
+Similarly, Kd and Ki was tuned keeping other parameters constant. There are two final pairs of hyperparameter values which gave pretty close and least errors:
 ```sh
-Kp = 0.157667, Ki = 0.000381473, Kd = 1.45305
+Kp = 0.0992, Ki = 0.0002, Kd = 1.6458
+Kp = 0.1576, Ki = 0.0003, Kd = 1.4530
 ```
 
 ## Further Improvements
