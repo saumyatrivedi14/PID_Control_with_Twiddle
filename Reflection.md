@@ -33,11 +33,13 @@ Kp = 0.1, Ki = 0.001, Kd = 1.0
 ```
 
 These hyper-parameters were chosen as initial values for auto-tuning using twiddle algorithm. Each hyperparameter was selected individually with different increment(dp) and tolerance limits (tol) to twing. I started with Kp and kept other parameters constant, the simulator ran for 300 steps and total error was recorded to compare the direction and magnitude of the change of the hypermparameter.
+The value of Kp for which the error was the least was 0.0992. 
 
-The resulting optimized gains
-were again fed back to twiddle, this time for fine tuning. In this second iteration, the tuning interval was
-increased, and also, this time, the deltaI was set to a non-zero value, enabling the auto-tuning of integral 
-gain as well in this iteration. It is also observed that the set of optimum gains change with car speed. As 
-we go to higher throttle values, we need tighter, agressive gains. This calls for tuning at multiple throttle
-values and then using a look-up table for interpolating and getting appropriate PID gains for a given throttle.
+Similarly, Kd and Ki was tuned keeping other parameters constant. The final hyperparameters values selected were:
+```sh
+Kp = 0.0992, Ki = 0.000204755, Kd = 1.6485
+```
 
+## Further Improvements
+---
+With the current implementation, I see one draws back was to tune each parameter with different incremental values which can be merged together into one single algorithm where when twiddle is activated, it tunes all three hyperparameters and returns best values for all three. One more addition which would be great would be the PID speed controller, which can make the car go at higher speeds because at higher speeds the turns are more tighter and have aggressive gain values. An alternative solution to above idea could be to create a lookup table of best values of hyperparameters at different speeds, so that it reduces the computational load to run two PID controllers.
