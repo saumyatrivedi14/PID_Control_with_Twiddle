@@ -3,7 +3,7 @@
 ---
 This repository is an implementation of PID steer controller for a vehicle in a simulator using C++. The hyperparameters of the controller were tuned manually and fine-tuned using a Gradient Descent method called 'Twiddle'. A part of track is used to fine-tune each hyperparameter at a time. Once they are optimized, the cara completes the whole track without going off the track and maintaining the center-line.
 
-The details of the project can be found in the Reflection and also the video attached which shows the performance of the controller.
+The details of the project can be found in the [Reflection](./Reflection.md) and also the video attached which shows the performance of the controller.
 
 ## Dependencies
 
