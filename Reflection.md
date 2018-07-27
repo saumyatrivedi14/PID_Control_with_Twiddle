@@ -36,7 +36,7 @@ These hyper-parameters were chosen as initial values for auto-tuning using twidd
 
 Similarly, Kd and Ki was tuned keeping other parameters constant. The final hyperparameters values selected were:
 ```sh
-Kp = 0.1576, Ki = 0.0003, Kd = 1.4530
+Kp = 0.157667, Ki = 0.000381473, Kd = 1.45305
 ```
 
 ## Further Improvements
