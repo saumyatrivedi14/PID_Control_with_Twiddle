@@ -46,9 +46,9 @@ int main(int argC, char** argV)
   
   // TODO: Initialize the pid variable.
   if (argC > 1) {
-    init_Kp = atof(argV[1]); //0.0992
-    init_Ki = atof(argV[2]); //0.000204755
-    init_Kd = atof(argV[3]); //1.6485
+    init_Kp = atof(argV[1]); //0.0992, 0.1576
+    init_Ki = atof(argV[2]); //0.0002, 0.0003
+    init_Kd = atof(argV[3]); //1.6458, 1.4530
     if (argC > 4) {
       std::string is_twiddle = argV[4];
       if (is_twiddle.compare("twiddle") == 0) {
@@ -57,9 +57,10 @@ int main(int argC, char** argV)
     }
   }
   else{
+	  //Tuned Parameters
 	  init_Kp = 0.0992;
-	  init_Ki = 0.000204755;
-	  init_Kd = 1.6485;
+	  init_Ki = 0.0002;
+	  init_Kd = 1.6458;
   }
   
   //Init PID with P, I and D constants
